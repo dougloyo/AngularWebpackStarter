@@ -1,3 +1,5 @@
+require('./home.style.scss')
+
 angular.module("app.home", [])
     .config(["$routeProvider", function ($routeProvider) {
         $routeProvider

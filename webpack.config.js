@@ -18,7 +18,8 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.js$/, exclude: /node_modules/, loader:"babel" },
-            { test: /\.html$/, loader: 'raw', exclude: /node_modules/ }
+            { test: /\.html$/, loader: 'raw', exclude: /node_modules/ },
+            { test: /\.scss$/, loaders: ["style", "css", "sass"] }
         ]
     },
     plugins: [

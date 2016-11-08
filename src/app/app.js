@@ -1,3 +1,5 @@
+require('./app.scss')
+
 angular.module("app", [
     // Vendor dependencies
     "ngRoute",

@@ -4,7 +4,7 @@ angular
 
             var vm = this;
 
-            vm.testVariable = "Hello World";
+            vm.testVariable = "Hello David";
 
             vm.login = function () {
                 $location.path("/home");
