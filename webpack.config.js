@@ -39,6 +39,9 @@ module.exports = {
             // Copy vendor libraries/dependencies to the wwwroot/lib/ folder.
             { from: 'node_modules/angular/angular.min.js', to: 'lib/' },
             { from: 'node_modules/angular-route/angular-route.min.js', to: 'lib/' },
+            { from: 'node_modules/bootstrap/dist/css/bootstrap.min.css', to: 'lib/' },
+            { from: 'node_modules/bootstrap/dist/js/bootstrap.min.js', to: 'lib/' },
+            { from: 'node_modules/jquery/dist/jquery.min.js', to: 'lib/' },
 
             // Process angular app views.
             //{ context: 'src/app', from: '**/*.html', to: 'app/' },
