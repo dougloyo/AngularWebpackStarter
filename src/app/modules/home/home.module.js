@@ -6,17 +6,17 @@ angular.module("app.home", [])
             .when("/home",
             {
                 controller: "homeController",
-                controllerAs: "vm",
+                controllerAs: "ctrl",
                 template: require("./home.view.html")
             });
     }])
     .controller("homeController", ["$scope", function($scope) {
 
-        var vm = this;
+        var ctrl = this;
 
-        vm.x = "Hello World";
+        ctrl.x = "Hello World";
 
-        vm.someFunction = function () {
+        ctrl.someFunction = function () {
             // Do something..
         };
 

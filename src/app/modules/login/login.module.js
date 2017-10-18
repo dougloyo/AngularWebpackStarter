@@ -2,11 +2,11 @@ angular
     .module('app.login', [])
     .controller('loginController', ['$location', function($location) {
 
-            var vm = this;
+            var ctrl = this;
 
-            vm.testVariable = "Hello Doug";
+            ctrl.testVariable = "Hello Doug";
 
-            vm.login = function () {
+            ctrl.login = function () {
                 $location.path("/home");
             };
         }

@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <base href="/">
     <title></title>
     <link href="lib/bootstrap.min.css" rel="stylesheet" />
+    <link href="lib/toastr.min.css" rel="stylesheet" />
   </head>
   <body ng-app="app">
     <div class="container">
     <h1>Index</h1>
-    <a href="home">Home</a> | <a href="login">Login</a>
+        <a href="#/home">Home</a> | <a href="#/login">Login</a> | <a href="#/people">People</a>
+        <br/>
+        <a href="#/samples">Samples</a>
     <ng-view />
     </div>
 
@@ -17,5 +20,8 @@
     <script type="text/javascript" src="lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="lib/angular.min.js"></script>
     <script type="text/javascript" src="lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="lib/angular-animate.min.js"></script>
+    <script type="text/javascript" src="lib/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="lib/toastr.min.js"></script>
   </body>
 </html>
