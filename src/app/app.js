@@ -10,6 +10,7 @@ angular.module("app", [
     // Vendor dependencies
     "ngRoute",
     "ui.bootstrap",
+    "gridstack-angular",
 
     // App config
     "app.config",

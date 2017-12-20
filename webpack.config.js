@@ -6,20 +6,20 @@ var glob = require("glob");
 
 module.exports = {
     devServer: {
-        contentBase: "wwwroot", 
+        contentBase: "./src", 
         inline: true 
     },
     entry: glob.sync("./src/app/**/*.js"), //'./src/app/app.js',
     output: {
-        path: './wwwroot',
+        path: path.resolve(__dirname, 'wwwroot'),
         publicPath: "",
         filename: 'dist/app.bundle.js'
     },
     module: {
-        loaders: [
-            { test: /\.js$/, exclude: /node_modules/, loader:"babel" },
-            { test: /\.html$/, loader: 'raw', exclude: /node_modules/ },
-            { test: /\.scss$/, loaders: ["style", "css", "sass"] }
+        rules: [
+            { test: /src.*\.js$/, exclude: /node_modules/, use: [{ loader: "babel-loader" }] },
+            { test: /src.*\.html$/, exclude: /node_modules/, use: [{ loader: 'raw-loader' }] },
+            { test: /src.*\.scss$/, use: [{ loader: "style-loader" }, { loader: "css-loader" }, { loader: "sass-loader" }] }
         ]
     },
     plugins: [
@@ -49,12 +49,16 @@ module.exports = {
             { from: 'node_modules/jquery/dist/jquery.min.js', to: 'lib/' },
             { from: 'node_modules/toastr/build/toastr.min.js', to: 'lib/' },
             { from: 'node_modules/toastr/build/toastr.min.css', to: 'lib/' },
+            // Gridstack
+            { from: 'src/lib/', to: 'lib/' },
+            { from: 'node_modules/lodash/lodash.min.js', to: 'lib/' },
+            { from: 'node_modules/gridstack/dist/gridstack.min.css', to: 'lib/' },
+            { from: 'node_modules/gridstack/dist/gridstack-extra.min.css', to: 'lib/' },
+            //{ from: 'node_modules/gridstack/dist/gridstack.min.js', to: 'lib/' },
+            //{ from: 'src/lib/gridstack-angular/gridstack-angular.min.js', to: 'lib/' },
 
             // Process angular app views.
             //{ context: 'src/app', from: '**/*.html', to: 'app/' },
-        ],
-        {
-            copyUnmodified: true
-        })
+        ], { copyUnmodified: true })
     ]
 };
