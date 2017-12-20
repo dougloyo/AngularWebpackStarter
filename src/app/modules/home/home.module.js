@@ -14,9 +14,21 @@ angular.module("app.home", [])
 
         var ctrl = this;
         ctrl.model = {};
+
+        ctrl.chart={ 
+            labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
+            series: ['Series A', 'Series B'],
+            data: [ [65, 59, 80, 81, 56, 55, 40], [28, 48, 40, 19, 86, 27, 90] ],
+            options:{
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        };
+
+  // Grid
         ctrl.grid = {};
 
-        ctrl.grid.widgets = [{ x:0, y:0, width:1, height:1 }, { x:1, y:0, width:3, height:1 }, { x:2, y:1, width:1, height:1 }];
+        ctrl.grid.widgets = [{ x:0, y:0, width:1, height:1 }, { x:1, y:0, width:3, height:1, chart: ctrl.chart }, { x:2, y:1, width:1, height:1 }];
 
         ctrl.grid.options = {
                 cellHeight: 200,

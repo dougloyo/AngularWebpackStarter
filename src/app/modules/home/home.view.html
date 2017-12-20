@@ -5,7 +5,7 @@
         .grid-stack-item-content {
             color: #2c3e50;
             text-align: center;
-            background-color: #732145;
+            background-color: #cacaca;
         }
     </style>
 
@@ -20,8 +20,29 @@
                 <div gridstack class="grid-stack grid1" options="ctrl.grid.options" on-change="ctrl.grid.onChange(event,items)" on-drag-start="ctrl.grid.onDragStart(event,ui)" on-drag-stop="ctrl.grid.onDragStop(event,ui)" on-resize-start="ctrl.grid.onResizeStart(event,ui)" on-resize-stop="ctrl.grid.onResizeStop(event,ui)">
                     <div class="grid-stack-item" gridstack-item ng-repeat="w in ctrl.grid.widgets" gs-item-x="w.x" gs-item-y="w.y"
                          gs-item-width="w.width" gs-item-height="w.height" gs-item-autopos="w.autoPos" on-item-added="ctrl.grid.onItemAdded(item)" on-item-removed="ctrl.grid.onItemRemoved(item)">
-                            <div class="grid-stack-item-content">
-                                <button class="btn btn-primary" ng-click="ctrl.grid.removeWidget(w)">remove</button>
+                            
+                            <div class="grid-stack-item-content" style="padding:1rem;">
+                                <canvas id="bar" class="chart chart-bar" 
+                                            chart-options="w.chart.options" 
+                                            chart-data="w.chart.data" 
+                                            chart-labels="w.chart.labels" 
+                                            chart-series="w.chart.series">
+                                        </canvas>
+
+                                <!--<div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Panel title</h3>
+                                        
+                                    </div>
+                                    <div class="panel-body" style="position:relative">
+                                        <canvas id="bar" class="chart chart-bar" 
+                                            chart-options="w.chart.options" 
+                                            chart-data="w.chart.data" 
+                                            chart-labels="w.chart.labels" 
+                                            chart-series="w.chart.series">
+                                        </canvas>
+                                    </div>
+                                </div>-->
                             </div>
                     </div>
                 </div>

@@ -11,6 +11,7 @@ angular.module("app", [
     "ngRoute",
     "ui.bootstrap",
     "gridstack-angular",
+    "chart.js",
 
     // App config
     "app.config",

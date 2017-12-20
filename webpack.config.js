@@ -54,8 +54,10 @@ module.exports = {
             { from: 'node_modules/lodash/lodash.min.js', to: 'lib/' },
             { from: 'node_modules/gridstack/dist/gridstack.min.css', to: 'lib/' },
             { from: 'node_modules/gridstack/dist/gridstack-extra.min.css', to: 'lib/' },
-            //{ from: 'node_modules/gridstack/dist/gridstack.min.js', to: 'lib/' },
-            //{ from: 'src/lib/gridstack-angular/gridstack-angular.min.js', to: 'lib/' },
+
+            //Chart Js
+            { from: 'node_modules/chart.js/dist/Chart.min.js', to: 'lib/' },
+            { from: 'node_modules/angular-chart.js/dist/angular-chart.min.js', to: 'lib/' },
 
             // Process angular app views.
             //{ context: 'src/app', from: '**/*.html', to: 'app/' },
