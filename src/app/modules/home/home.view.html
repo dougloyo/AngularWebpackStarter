@@ -22,12 +22,6 @@
                          gs-item-width="w.width" gs-item-height="w.height" gs-item-autopos="w.autoPos" on-item-added="ctrl.grid.onItemAdded(item)" on-item-removed="ctrl.grid.onItemRemoved(item)">
                             
                             <div class="grid-stack-item-content" style="padding:1rem;">
-                                <canvas id="bar" class="chart chart-bar" 
-                                            chart-options="w.chart.options" 
-                                            chart-data="w.chart.data" 
-                                            chart-labels="w.chart.labels" 
-                                            chart-series="w.chart.series">
-                                        </canvas>
                                 <chart-directive data="w.chart"></chart-directive>
                                 <!--<div class="panel panel-default">
                                     <div class="panel-heading">

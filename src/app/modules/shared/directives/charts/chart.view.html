@@ -1,10 +1,11 @@
 <h3>ChartDirective</h3>
-{{ctrl.chart.options}}
 <div>
-    <canvas id="bar" class="chart chart-bar" 
+    <canvas id="bar" class="chart chart-pie" 
         chart-options="ctrl.chart.options" 
         chart-data="ctrl.chart.data" 
         chart-labels="ctrl.chart.labels" 
-        chart-series="ctrl.chart.series">
+        chart-series="ctrl.chart.series"
+        chart-click="ctrl.onChartClick"
+        >
     </canvas>
 </div>
