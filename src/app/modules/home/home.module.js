@@ -10,11 +10,32 @@ angular.module("app.home", [])
                 template: require("./home.view.html")
             });
     }])
-    .controller("homeController", ["$log", function($log) {
+    .controller("homeController", ["$log", "$uibModal", function($log, $uibModal) {
 
         var ctrl = this;
         ctrl.model = {};
+        ctrl.items = ['item1', 'item2', 'item3'];
 
+    // Modal
+    ctrl.openModal = function(size){
+        var modalInstance = $uibModal.open({
+            animation: true,
+            ariaLabelledBy: 'modal-title',
+            ariaDescribedBy: 'modal-body',
+            template: require("./home.modal.view.html"),
+            controller: 'ModalInstanceCtrl',
+            controllerAs: 'ctrl',
+            size: size,
+            //appendTo: parentElem,
+            resolve: {
+                items: function () {
+                return ctrl.items;
+                }
+            }
+            });
+    }
+
+    // Chart
         ctrl.chart={ 
             labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
             series: ['Series A'], //['Series A', 'Series B'],
@@ -25,7 +46,7 @@ angular.module("app.home", [])
             }
         };
 
-  // Grid
+    // Grid
         ctrl.grid = {};
 
         ctrl.grid.widgets = [{ x:0, y:0, width:1, height:1 }, { x:1, y:0, width:3, height:1, chart: ctrl.chart }, { x:2, y:1, width:1, height:1 }];
